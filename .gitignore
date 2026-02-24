@@ -1,0 +1,13 @@
+# Ignore everything by default
+*
+*/
+
+# But include these essential files:
+!.gitignore
+
+# Include the dist/ folder (CDN distribution files)
+!dist/
+!dist/**
+
+# But exclude README files from dist
+dist/README.md
