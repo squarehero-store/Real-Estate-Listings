@@ -11,3 +11,4 @@
 
 # But exclude README files from dist
 dist/README.md
+.vercel
