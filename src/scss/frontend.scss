@@ -659,9 +659,42 @@ body.re-styles-loaded .skeleton-map {
 }
 
 /* Property Header */
-.property-header {
+.property-header-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
+}
+
+.property-header {
+  max-width: 50%;
+  flex: 1 1 auto;
+}
+
+.property-header-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.property-apply-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: var(--re-primary-color, #007bff);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.property-apply-button:hover {
+  background-color: var(--re-primary-hover-color, #0056b3);
+  color: white;
 }
 
 .property-title {
@@ -673,11 +706,66 @@ body.re-styles-loaded .skeleton-map {
   color: var(--re-page-title-color);
 }
 
+.property-header .property-address {
+  margin: 0 0 1rem 0;
+  font-size: inherit;
+  font-weight: normal;
+  color: inherit;
+  line-height: inherit;
+}
+
 .property-price {
   font-family: var(--re-page-price-font-family);
   font-size: var(--re-page-price-font-size);
   font-weight: var(--re-page-price-font-weight);
   color: var(--re-page-price-color);
+}
+
+/* Sticky Action Bar */
+.property-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.property-sticky-bar.visible {
+  transform: translateY(0);
+}
+
+.property-sticky-bar-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.property-sticky-bar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.property-sticky-bar-price {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--re-page-price-color, #333);
+}
+
+.property-sticky-bar-actions {
+  flex: 0 0 auto;
 }
 
 /* Property Gallery */
